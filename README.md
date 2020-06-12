@@ -3,6 +3,7 @@ Bot for Telegram App that emulates fictional character Fernando Martinez of Vice
 
 # Authors
 Alan Padierna Fernández - [@AlanPadi95](https://github.com/AlanPadi95)
+
 Marcelo Torrejón Manso - [@marcelotm23](https://github.com/marcelotm23) - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5.svg?logo=LinkedIn&logoColor=white)](https://es.linkedin.com/in/marcelo-torrej%C3%B3n-manso-b45952160)
 
 ## License
