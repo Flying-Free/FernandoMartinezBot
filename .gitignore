@@ -133,3 +133,6 @@ dmypy.json
 
 # Auth telegram token
 src/auth.py
+
+# MacOSX files
+**.DS_Store
