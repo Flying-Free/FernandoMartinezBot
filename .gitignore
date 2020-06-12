@@ -130,3 +130,6 @@ dmypy.json
 
 # Custon environment
 .idea
+
+# Auth telegram token
+src/auth.py
