@@ -12,11 +12,10 @@ import pickle
 # Load data to train the model
 with open('intents.json') as file:
     data = json.load(file)
-try:
-    with open("data.pickle", "rb") as f:
-        words, labels, training, output = pickle.load(f)
-except:
-    # Extract data
+
+
+def extract_data():
+    global words, labels, docs_x, docs_y, wrds
     words = []
     labels = []
     docs_x = []
@@ -26,14 +25,13 @@ except:
     # meaning behind sentences.
     for intent in data['intents']:
         for pattern in intent['patterns']:
-            wrds = nltk.word_tokenize(pattern)# return a list of words
+            wrds = nltk.word_tokenize(pattern)  # return a list of words
             words.extend(wrds)
             docs_x.append(wrds)
             docs_y.append(intent["tag"])
 
         if intent['tag'] not in labels:
             labels.append(intent['tag'])
-
     # Lower words
     words = [stemmer.stem(w.lower()) for w in words if w != "?"]
     # Sort words
@@ -41,6 +39,13 @@ except:
     # Sort labels
     labels = sorted(labels)
 
+
+try:
+    with open("data.pickle", "rb") as f:
+        words, labels, training, output = pickle.load(f)
+except:
+    # Extract data
+    extract_data()
 
     # Preprocessing data, creating a bag of words
     training = []
@@ -78,8 +83,8 @@ tensorflow.reset_default_graph()
 # Input layer
 net = tflearn.input_data(shape=[None, len(training[0])])
 # Hidden layers
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 7)
+net = tflearn.fully_connected(net, 7)
 # Output layer, with activation function softmax
 # that will give a probability to each neuron
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
@@ -93,7 +98,7 @@ model = tflearn.DNN(net)
 except:"""
 # Training model, nepoch=the amount of times that the model
 # will see the same information while training
-model.fit(training, output, n_epoch=3000, batch_size=8, show_metric=True)
+model.fit(training, output, n_epoch=5000, batch_size=8, show_metric=True)
 model.save("model.tflearn")
 
 
@@ -130,10 +135,6 @@ def chat():
             if tg['tag'] == tag:
                 responses = tg['responses']
                 print(random.choice(responses))
-
-        if(responses==""):
-            print("Sorry, but i don't undestand you")
-
 
 
 chat()
