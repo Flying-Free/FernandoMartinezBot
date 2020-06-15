@@ -22,30 +22,20 @@ class Processor:
         # Load data to train the model
         with open('input/intents.json') as file:
             data = json.load(file)
-        # Stammer, take each word in our pattern and bring it down to the root word
-        # to reduce the vocabulary of our model and attempt to find the more general
-        # meaning behind sentences.
-        for i in data['intents']:
-            intent = Intent(i)
-            self.intents.append(intent)
-            for pattern in intent.patterns:
-                post_processed_words = nltk.word_tokenize(pattern)  # return a list of words
-                self.pre_processed_words.extend(post_processed_words)
-                self.docs_x.append(post_processed_words)
-                self.docs_y.append(intent.tag)
-            if intent.tag not in self.labels:
-                self.labels.append(intent.tag)
 
     def execute(self):
-        self.__extract_data()
+
         try:
             with open("input/data.pickle", "rb") as f:
                 self.pre_processed_words, self.labels, training, output = pickle.load(f)
+
         except:
+            self.__extract_data()
             training, output = self.__process_input()
             # Save pre-processing
             with open("input/data.pickle", "wb") as f:
                 pickle.dump((self.pre_processed_words, self.labels, training, output), f)
+
         return training, output
 
     # Generate a bag of words as numpy array from a provided string
@@ -63,6 +53,19 @@ class Processor:
         return numpy.array(bag)
 
     def __extract_data(self):
+        # Stammer, take each word in our pattern and bring it down to the root word
+        # to reduce the vocabulary of our model and attempt to find the more general
+        # meaning behind sentences.
+        for i in self.data['intents']:
+            intent = Intent(i)
+            self.intents.append(intent)
+            for pattern in intent.patterns:
+                post_processed_words = nltk.word_tokenize(pattern)  # return a list of words
+                self.pre_processed_words.extend(post_processed_words)
+                self.docs_x.append(post_processed_words)
+                self.docs_y.append(intent.tag)
+            if intent.tag not in self.labels:
+                self.labels.append(intent.tag)
         # Lower words
         self.pre_processed_words = [stemmer.stem(w.lower()) for w in self.pre_processed_words if w != "?"]
         # Sort words
