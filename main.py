@@ -10,18 +10,12 @@ from model.trainer import Trainer
 processor = Processor()
 training, output = processor.execute()
 
-# TODO: Continue with clean coding, extract general variables
 # Developing the model
 m = NeuronalModeler()
 model = m.modeling(output=output, training=training)
-# Load model
-"""try:
-    model.load("model.tflearn")
 
-except:"""
 # Training
 Trainer.train(model=model, training=training, output=output)
-
 
 # Terminal chat simulation
 def chat():

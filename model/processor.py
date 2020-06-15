@@ -38,18 +38,20 @@ class Processor:
 
     def execute(self):
         self.__extract_data()
+
         try:
-            with open("input/data.pickle", "rb") as f:
+            with open("../input/data.pickle", "rb") as f:
                 self.pre_processed_words, self.labels, training, output = pickle.load(f)
+            return training, output
         except:
             training, output = self.__process_input()
             # Save pre-processing
-            with open("input/data.pickle", "wb") as f:
+            with open("../input/data.pickle", "wb") as f:
                 pickle.dump((self.pre_processed_words, self.labels, training, output), f)
-        return training, output
+            return training, output
 
     # Generate a bag of words as numpy array from a provided string
-    def bag_of_words(s, words):
+    def bag_of_words(self, s, words):
         bag = [0 for _ in range(len(words))]
 
         s_words = nltk.word_tokenize(s)
