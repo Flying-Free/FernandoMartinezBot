@@ -17,6 +17,9 @@ class Intent:
         data = json.dumps(d, indent=4, cls=IntentEncoder)
         self = json.loads(data, object_hook=self.__custom_intent_encoder)
 
-    @staticmethod
-    def __custom_intent_encoder(intentDict):
-        return namedtuple('X', intentDict.keys())(*intentDict.values())
+    def __custom_intent_encoder(self, intentDict):
+        self.tag = intentDict["tag"]
+        self.patterns = intentDict["patterns"]
+        self.responses = intentDict["responses"]
+        self.context_set = intentDict["context_set"]
+        return self
