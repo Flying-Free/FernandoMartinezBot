@@ -15,7 +15,7 @@ m = NeuronalModeler()
 model = m.modeling(output=output, training=training)
 
 # Training
-Trainer.train(model=model, training=training, output=output)
+Trainer().train(model=model, training=training, output=output)
 
 # Terminal chat simulation
 def chat():
@@ -26,7 +26,7 @@ def chat():
         if inp.lower() == "quit":
             break
         # Convert it to a bag of word and get a prediction from the model
-        results = model.predict([processor.bag_of_words(inp, processor.words)])
+        results = model.predict([processor.bag_of_words(inp, processor.pre_processed_words)])
         # Find the most probable intent class
         results_index = numpy.argmax(results)
         tag = processor.labels[results_index]
