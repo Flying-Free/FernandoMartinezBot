@@ -133,6 +133,5 @@ dmypy.json
 
 # Models
 **.pickle
-
-checkpoint
-*.pickle
+**model.**
+**checkpoint

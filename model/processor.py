@@ -1,14 +1,12 @@
 from nltk.stem.lancaster import LancasterStemmer
-
 from model.intent import Intent
-
-stemmer = LancasterStemmer()
 import numpy
 import nltk
-
-nltk.download('punkt')
 import json
 import pickle
+
+stemmer = LancasterStemmer()
+nltk.download('punkt')
 
 
 class Processor:
@@ -21,10 +19,11 @@ class Processor:
     def __init__(self):
         # Load data to train the model
         with open('input/intents.json') as file:
-            self.data = json.load(file)
+            data = json.load(file)
+        for i in data['intents']:
+            self.intents.append(Intent(i))
 
     def execute(self):
-
         try:
             with open("input/data.pickle", "rb") as f:
                 self.pre_processed_words, self.labels, training, output = pickle.load(f)
@@ -55,16 +54,14 @@ class Processor:
         # Stammer, take each word in our pattern and bring it down to the root word
         # to reduce the vocabulary of our model and attempt to find the more general
         # meaning behind sentences.
-        for i in self.data['intents']:
-            intent = Intent(i)
-            self.intents.append(intent)
-            for pattern in intent.patterns:
+        for i in self.intents:
+            for pattern in i.patterns:
                 post_processed_words = nltk.word_tokenize(pattern)  # return a list of words
                 self.pre_processed_words.extend(post_processed_words)
                 self.docs_x.append(post_processed_words)
-                self.docs_y.append(intent.tag)
-            if intent.tag not in self.labels:
-                self.labels.append(intent.tag)
+                self.docs_y.append(i.tag)
+            if i.tag not in self.labels:
+                self.labels.append(i.tag)
         # Lower words
         self.pre_processed_words = [stemmer.stem(w.lower()) for w in self.pre_processed_words if w != "?"]
         # Sort words
