@@ -106,10 +106,40 @@
       "context_set": ""
     },
     {
+      "tag": "music_recomendation",
+      "patterns": [
+        "what song you recommend to me?",
+        "gimme a music recomendation?",
+        "a good song?",
+        "a good track?"
+      ],
+      "responses": [
+        "Quarterflash - \"Harden My Heart\"",
+        "Toto - \"Make Believe\"",
+        "Elkie Brooks - \"Fool If You Think It's Over\"",
+        "The Passions - \"I'm In Love With A German Film Star\"",
+        "Foreigner - \"I Want To Know What Love Is\"",
+        "Assembly - \"Never, Never\"",
+        "Pat Benatar - \"We Belong\"",
+        "The Pretenders - \"Private Life\"",
+        "Phil Collins - \"In The Air Tonight\"",
+        "Roxy Music - \"Avalon\"",
+        "Eddie Money - \"Baby Hold On\"",
+        "Rainbow - \"Stone Cold\"",
+        "Giuffria - \"Call To The Heart\"",
+        "Art of Noise - \"Moments In Love\"",
+        "Dan Hartman - \"I Can Dream About You\"",
+        "Foreigner - \"I've Been Waiting(For a Girl Like You)\"",
+        "Toto - \"Africa\"",
+        "Jan Hammer - \"Crockett's Theme\""
+      ],
+      "context_set": ""
+    }
+    {
       "tag": "story",
       "patterns": [],
       "responses": [],
       "context_set": ""
     }
   ]
-}
+  }
