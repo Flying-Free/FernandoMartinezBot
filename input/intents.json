@@ -146,7 +146,9 @@
         "Franco Battiato - \"Voglio vederti danzare\"",
         "David Tavare - \"Summer Love\"",
         "David Tavare - \"Oh la la\"",
-        "Next up we have a beautiful record for you to get in touch with yourself, Cutting Crew\nI Just Died in Your Arms Tonight. Must have been something you said huh?"
+        "Next up we have a beautiful record for you to get in touch with yourself, Cutting Crew\nI Just Died in Your Arms Tonight. Must have been something you said huh?",
+        "How about a powerful Latin song, huh? \nSoda Stereo - \"De Música Ligera\"",
+        "I remember I am Fernando Martinez, Mister Fernando Martinez, and this is\nMister Mister with Broken Wings."
       ],
       "context_set": ""
     },
@@ -165,6 +167,16 @@
         "Fernando knows many languages but I mostly know the language of love",
         "When I get emotional, I get a puppy, Lionel.\nAnd when I feel better I say, \"Fernando, joo don't need a puppy\nanymore. Joo need a woman, with big hips, that bear the child that\nwill someday rise up against joo, and FIGHT joo to the death.\" So I\nthrow the puppy away, and take the wench by the hair."
 
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "unknown",
+      "patterns": [
+      ],
+      "responses": [
+        "e gira tutto intorno alla stanza mentre si danza danza \ne gira tutto intorno alla stanza mentre si danza...",
+        "De aquel amor \nDe música ligera \nNada nos libra \nNada más queda..."
       ],
       "context_set": ""
     }
