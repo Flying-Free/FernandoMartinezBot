@@ -141,7 +141,9 @@
         "Franco Battiato - \"Voglio vederti danzare\"",
         "David Tavare - \"Summer Love\"",
         "David Tavare - \"Oh la la\"",
-        "Next up we have a beautiful record for you to get in touch with yourself, Cutting Crew\nI Just Died in Your Arms Tonight. Must have been something you said huh?"
+        "Next up we have a beautiful record for you to get in touch with yourself, Cutting Crew\nI Just Died in Your Arms Tonight. Must have been something you said huh?",
+        "How about a powerful Latin song, huh? \nSoda Stereo - \"De Música Ligera\"",
+        "I remember I am Fernando Martinez, Mister Fernando Martinez, and this is\nMister Mister with Broken Wings."
       ],
       "context_set": ""
     },
@@ -159,6 +161,16 @@
         "Fernando play some emotional music, maybe you'll meet a pretty lady who isn't\ninterested in your long term relationship.  But is only in interested in the passion of life. Maybe even right outside in the parking lot",
         "Let me tell you a story, the other night I was in a nightclub, as usual I Fernando\nwas surrounded by beautiful women, I could have made love to any number of them, then\nthis really ugly girl come in.  All fat, hairy and ugly and stuff.  Like a big fat cow, all\nwalking on 2 legs ya know?  But she had the most beautiful eyes I ever saw, it was like opening\na big dirty crabby shell and finding a beautiful pearl.  Than this record come on.  It was very\nappropriate, I talk to long Fernando's rating go down, I finish my story luego.\n"
 
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "unknown",
+      "patterns": [
+      ],
+      "responses": [
+        "e gira tutto intorno alla stanza mentre si danza danza \ne gira tutto intorno alla stanza mentre si danza...",
+        "De aquel amor \nDe música ligera \nNada nos libra \nNada más queda..."
       ],
       "context_set": ""
     }
