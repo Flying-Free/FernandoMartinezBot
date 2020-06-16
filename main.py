@@ -17,7 +17,7 @@ def main():
     Trainer().train(model=model, training=training, output=output)
 
     # UI that will be replaced with the Telegram Bot
-    chat()
+    chat(processor, model)
 
 
 if __name__ == "__main__":
