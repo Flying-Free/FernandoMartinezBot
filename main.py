@@ -3,6 +3,7 @@ from model.processor import Processor
 from model.trainer import Trainer
 from ui import chat
 
+
 def main():
     # Process input data
     processor = Processor()

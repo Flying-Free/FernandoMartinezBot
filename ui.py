@@ -1,5 +1,10 @@
+from random import choice
+
+import numpy
+
+
 # Terminal chat simulation
-def chat():
+def chat(processor, model):
     print("Start talking with the bot (type quit to stop)!")
     while True:
         # Get some input from the user
