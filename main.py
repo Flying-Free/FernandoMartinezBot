@@ -1,8 +1,8 @@
-from model.neuronal_modeler import NeuronalModeler
-from model.processor import Processor
-from model.trainer import Trainer
-from ui import chat
-
+from backend.neuronal_modeler import NeuronalModeler
+from backend.processor import Processor
+from backend.trainer import Trainer
+# from frontend.ui import chat
+from frontend.ui import telegram_chat
 
 def main():
     # Process input data
@@ -17,7 +17,10 @@ def main():
     Trainer().train(model=model, training=training, output=output)
 
     # UI that will be replaced with the Telegram Bot
-    chat(processor, model)
+    #chat(processor, model)
+
+    # Telegram Chat Bot
+    telegram_chat(processor, model)
 
 
 if __name__ == "__main__":

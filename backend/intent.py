@@ -1,7 +1,6 @@
 import json
-from collections import namedtuple
 
-from model.intent_encoder import IntentEncoder
+from backend.intent_encoder import IntentEncoder
 
 
 class Intent:

@@ -1,5 +1,5 @@
 from nltk.stem.lancaster import LancasterStemmer
-from model.intent import Intent
+from backend.intent import Intent
 import numpy
 import nltk
 import json
