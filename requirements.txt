@@ -1,0 +1,6 @@
+nltk==3.5
+numpy==1.18.5
+tensorboard==1.15.0
+tensorflow==1.15.0
+tensorflow-estimator==1.15.1
+tflearn==0.3.2

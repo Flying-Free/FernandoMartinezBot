@@ -1,18 +1,12 @@
-"""
-    Ejemplo 2 - Este segundo programa genera una respuesta si se recibe un mensaje con
-            las palabras "Hola" o "Adios"
-
-    Escrito por Transductor
-    www.robologs.net
-"""
 
 # Importar librerias
 import json
 import requests
+import os                                              
 
 class Telegram:
     # Variables para el Token y la URL del chatbot
-    TOKEN = ""  # Cambialo por tu token
+    TOKEN = os.environ['TelegramToken']  # Cambialo por tu token
     URL = "https://api.telegram.org/bot" + TOKEN + "/"
 
     def update(self, offset):
